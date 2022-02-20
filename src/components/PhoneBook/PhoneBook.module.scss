@@ -1,0 +1,33 @@
+.Contacts{
+    list-style: none;
+    &>li{
+        text-align: center;
+    }
+}
+.ContactsName{
+    display: inline-block;
+    color: green
+}
+.ContactsNumber{
+    display: inline-block;
+    margin-left: 20px;
+}
+.DeleteBtn{
+    display: inline-block;
+    min-width: 50px;
+    margin: 0 auto;
+    background-color: blue;
+    color: #f8f8f8;
+    border-radius: 5px;
+    padding: 6px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all 250ms linear;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+.Empty{
+    text-align: center;
+}
