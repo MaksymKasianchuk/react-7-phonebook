@@ -1,0 +1,1 @@
+This simple React "Phonebook" app has been refactorized for Redux asynchronous operations and selectors. And now it uses mockAPI instead of localStorage with Persistor.
