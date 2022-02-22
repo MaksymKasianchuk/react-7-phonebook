@@ -8,6 +8,10 @@ import PhoneBookForm from './components/PhonebookForm';
 import Loader from './components/Loader';
 import Section from './components/Section';
 
+const errorStyles = {
+  color: 'red',
+}
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchContacts();
@@ -17,10 +21,13 @@ class App extends Component {
     return (
       <>
         <PhoneBookForm />
-        {this.props.isLoadingTodos && <Loader/>}
-        {this.props.error && <Section><h1>{this.props.error}</h1></Section>}
-        <Filter />
-        <PhoneBook />
+        {this.props.error && <Section><h1 style={errorStyles}>{this.props.error}</h1></Section>}
+        {this.props.isLoadingTodos ? <Loader/> :
+        <>
+          <Filter />
+          <PhoneBook />
+        </>
+        }
       </>
     )
   };
