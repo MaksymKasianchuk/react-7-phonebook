@@ -22,12 +22,9 @@ class App extends Component {
       <>
         <PhoneBookForm />
         {this.props.error && <Section><h1 style={errorStyles}>{this.props.error}</h1></Section>}
-        {this.props.isLoadingTodos ? <Loader/> :
-        <>
-          <Filter />
-          <PhoneBook />
-        </>
-        }
+        {this.props.isLoadingTodos && <Loader/>}
+        <Filter />
+        <PhoneBook />
       </>
     )
   };
