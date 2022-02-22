@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import PhoneBook from './components/PhoneBook';
 import Filter from './components/Filter';
 import PhoneBookForm from './components/PhonebookForm';
+import Loader from './components/Loader';
+import Section from './components/Section';
 
 class App extends Component {
   componentDidMount() {
@@ -15,7 +17,8 @@ class App extends Component {
     return (
       <>
         <PhoneBookForm />
-        {this.props.isLoadingTodos && <h1>Загружаем...</h1>}
+        {this.props.isLoadingTodos && <Loader/>}
+        {this.props.error && <Section><h1>{this.props.error}</h1></Section>}
         <Filter />
         <PhoneBook />
       </>
@@ -24,6 +27,7 @@ class App extends Component {
 }
 const mapStateToProps = state => ({
   isLoadingTodos: phonebookSelectors.getLoading(state),
+  error: phonebookSelectors.getError(state),
 });
 
 const mapDispatchToProps = dispatch => ({

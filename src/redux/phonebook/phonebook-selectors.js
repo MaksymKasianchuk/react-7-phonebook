@@ -6,6 +6,8 @@ const getFilter = state => state.phonebook.filter;
 
 const getAllContacts = state => state.phonebook.contacts;
 
+const getError = state => state.phonebook.error;
+
 const getVisibleContacts = createSelector(
     [getAllContacts, getFilter],
     (allContacts, filter) =>{
@@ -19,5 +21,6 @@ const getVisibleContacts = createSelector(
 export default {
     getLoading,
     getFilter,
+    getError,
     getVisibleContacts,
 };

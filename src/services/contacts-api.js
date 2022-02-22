@@ -1,22 +1,24 @@
 import axios from 'axios';
 
+axios.defaults.baseURL = 'https://620f937cec8b2ee28345149a.mockapi.io/api/v1';
+
 const fetchAllContacts = () =>{
     return axios 
     .get(
-        `https://620f937cec8b2ee28345149a.mockapi.io/api/v1/contacts`,
+        `/contacts`,
     )
     .then( response => response.data);
 };
 
 const addContact = (contact) =>{
     return axios 
-    .post('https://620f937cec8b2ee28345149a.mockapi.io/api/v1/contacts', contact)
+    .post('/contacts', contact)
     .then(({ data }) => data);
 };
 
 const deleteContact = (contactId) =>{
     return axios 
-    .delete(`https://620f937cec8b2ee28345149a.mockapi.io/api/v1/contacts/${contactId}`)
+    .delete(`/contacts/${contactId}`)
     .then(({ data }) => data);
 };
 
